@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.duoc.msVehiculo.dto.VehiculoDTO;
 import cl.duoc.msVehiculo.model.Vehiculo;
 import cl.duoc.msVehiculo.repository.VehiculoRepository;
 
@@ -36,6 +37,11 @@ public class VehiculoService {
         }else{
             throw new RuntimeException("El vehiculo no existe");
         }
+    }
+
+    public VehiculoDTO buscarVehiculoDTO(Integer id){
+        Vehiculo vehiculo = buscarVehiculo(id);
+        return new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getModelo());
     }
 
     public Vehiculo actualizarVehiculo(Integer id, Vehiculo vehiculoActualizado){

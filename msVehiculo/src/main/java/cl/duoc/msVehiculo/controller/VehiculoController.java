@@ -67,10 +67,8 @@ public class VehiculoController {
     @GetMapping("/dto/{id}")
     public ResponseEntity<VehiculoDTO> buscarDTO(@PathVariable Integer id){
         try {
-            Vehiculo vehiculo = service.buscarVehiculo(id);
-            VehiculoDTO dto = new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getModelo());
-
-            return ResponseEntity.ok(dto);
+            VehiculoDTO vehiculoDTO = service.buscarVehiculoDTO(id);
+            return ResponseEntity.ok(vehiculoDTO);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
