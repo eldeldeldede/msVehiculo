@@ -1,5 +1,7 @@
 package cl.duoc.msVehiculo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +39,7 @@ public class Vehiculo {
     private String color;
 
     @ManyToOne
-    @JoinColumn(name = "tipovehiculo_id")
+    @JoinColumn(name = "tipovehiculo_id", nullable = false)
+    @JsonBackReference
     private TipoVehiculo tipoVehiculo; 
 }
