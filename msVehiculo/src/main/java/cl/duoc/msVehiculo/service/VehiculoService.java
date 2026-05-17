@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.duoc.msVehiculo.client.SucursalClient;
+import cl.duoc.msVehiculo.dto.SucursalDTO;
 import cl.duoc.msVehiculo.dto.VehiculoDTO;
 import cl.duoc.msVehiculo.model.Vehiculo;
 import cl.duoc.msVehiculo.repository.VehiculoRepository;
@@ -14,6 +16,9 @@ public class VehiculoService {
 
     @Autowired
     private VehiculoRepository repo;
+
+    @Autowired
+    private SucursalClient clientSucursal;
 
     public List<Vehiculo> listarVehiculos(){
         return repo.findAll();
@@ -41,7 +46,12 @@ public class VehiculoService {
 
     public VehiculoDTO buscarVehiculoDTO(Integer id){
         Vehiculo vehiculo = buscarVehiculo(id);
-        return new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getModelo());
+
+        SucursalDTO sucursal = clientSucursal.buscarSucursalDTO(vehiculo.getSucursalId());
+
+        return new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getModelo(), vehiculo.getKilometraje(), sucursal);
+        
+        
     }
 
     public Vehiculo actualizarVehiculo(Integer id, Vehiculo vehiculoActualizado){

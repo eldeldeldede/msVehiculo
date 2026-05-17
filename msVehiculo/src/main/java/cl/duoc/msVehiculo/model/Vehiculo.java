@@ -38,6 +38,9 @@ public class Vehiculo {
     @Column(nullable = false)
     private String color;
 
+    @Column(name = "sucursal_id", nullable = false)
+    private Integer sucursalId;
+
     @ManyToOne
     @JoinColumn(name = "tipovehiculo_id", nullable = false)
     @JsonBackReference

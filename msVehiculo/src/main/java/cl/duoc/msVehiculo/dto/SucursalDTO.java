@@ -1,6 +1,5 @@
 package cl.duoc.msVehiculo.dto;
 
-import cl.duoc.msVehiculo.model.Modelo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,11 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehiculoDTO {
+public class SucursalDTO {
 
     private Integer id;
-    private String patente;
-    private Modelo modelo;
-    private Integer kilometraje;
-    private SucursalDTO sucursal;
+    private String direccion;
 }
