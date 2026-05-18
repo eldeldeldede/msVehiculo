@@ -2,8 +2,10 @@ package cl.duoc.msVehiculo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 public class MsVehiculoApplication {
 
 	public static void main(String[] args) {
