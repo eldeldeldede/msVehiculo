@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.duoc.msVehiculo.dto.SucursalDTO;
 
-@FeignClient(name = "msSucursal", url = "http://localhost:8088")
+@FeignClient(name = "msSucursal", url = "http://localhost:8087")
 public interface SucursalClient {
 
     @GetMapping("/api/v1/sucursales/dto/{id}")
-    public SucursalDTO buscarSucursalDTO(@PathVariable Integer id);
+    public SucursalDTO buscarSucursalDTO(@PathVariable ("id")Integer id);
 
 }
