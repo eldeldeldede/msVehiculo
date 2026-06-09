@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.duoc.msVehiculo.dto.SucursalDTO;
 
-@FeignClient(name = "msSucursal", url = "http://localhost:8087")
+@FeignClient(name = "msSucursal")
 public interface SucursalClient {
 
     @GetMapping("/api/v1/sucursales/dto/{id}")

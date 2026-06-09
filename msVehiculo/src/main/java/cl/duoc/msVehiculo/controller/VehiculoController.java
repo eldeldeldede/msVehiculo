@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.duoc.msVehiculo.dto.VehiculoDTO;
 import cl.duoc.msVehiculo.model.Vehiculo;
 import cl.duoc.msVehiculo.service.VehiculoService;
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("api/v1/vehiculos")
@@ -25,6 +26,10 @@ public class VehiculoController {
     private VehiculoService service;
 
     @GetMapping
+    @Operation(
+        summary = "Obtener la lista de empleados registrados",
+        description = "Retorna la lista de empleados registrados en el sistema del Rent a Car."
+    )
     public ResponseEntity<List<Vehiculo>> listar(){
         try {
             List<Vehiculo> vehiculos = service.listarVehiculos();
@@ -35,6 +40,10 @@ public class VehiculoController {
     }
 
     @PostMapping
+    @Operation(
+        summary = "Registrar un nuevo empleado",
+        description = "Permite registrar un nuevo empleado en el sistema del Rent a Car."
+    )
     public ResponseEntity<Vehiculo> guardarVehiculo(Vehiculo vehiculo){
         try {
             Vehiculo vehiculoNuevo = service.guardarVehiculo(vehiculo);
@@ -45,6 +54,10 @@ public class VehiculoController {
     }
 
     @GetMapping("/id/{id}")
+    @Operation(
+        summary = "Buscar empleado por ID",
+        description = "Retorna los detalles de un empleado específico por su ID."
+    )
     public ResponseEntity<Vehiculo> buscarPorId(@PathVariable Integer id){
         try {
             Vehiculo vehiculo = service.buscarVehiculo(id);
@@ -55,6 +68,10 @@ public class VehiculoController {
     }
 
     @GetMapping("/patente/{patente}")
+    @Operation(
+        summary = "Buscar empleado por patente",
+        description = "Retorna los detalles de un empleado específico por su patente."
+    )
     public ResponseEntity<Vehiculo> buscarPorPatente(@PathVariable String patente){
         try {
             Vehiculo vehiculo = service.buscarVehiculoPorPatente(patente);
@@ -65,6 +82,10 @@ public class VehiculoController {
     }
 
     @GetMapping("/dto/{id}")
+    @Operation(
+        summary = "Buscar empleado por ID (DTO)",
+        description = "Retorna los detalles de un empleado específico por su ID en formato DTO."
+    )
     public ResponseEntity<VehiculoDTO> buscarDTO(@PathVariable Integer id){
         try {
             VehiculoDTO vehiculoDTO = service.buscarVehiculoDTO(id);
@@ -75,6 +96,10 @@ public class VehiculoController {
     }
 
     @PutMapping("/{id}")
+    @Operation(
+        summary = "Actualizar empleado",
+        description = "Permite actualizar los detalles de un empleado específico por su ID."
+    )
     public ResponseEntity<Vehiculo> actualizar(@PathVariable Integer id,@RequestBody Vehiculo vehiculoActualizado){
         try {
             Vehiculo vehiculo = service.actualizarVehiculo(id, vehiculoActualizado);
@@ -85,6 +110,10 @@ public class VehiculoController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(
+        summary = "Eliminar empleado",
+        description = "Permite eliminar un empleado específico por su ID."
+    )
     public ResponseEntity<Void> eliminar(Integer id){
         try {
             service.eliminarVehiculo(id);
