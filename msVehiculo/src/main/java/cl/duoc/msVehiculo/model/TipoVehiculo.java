@@ -19,8 +19,10 @@ public class TipoVehiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description="ID unico con el cual se identifica el tipo de vehiculo")
     private Integer id;
 
     @Column(nullable = false)
+    @Schema(description="tipo de vehiculo el cual se solicita")
     private String tipo;
 }
