@@ -17,9 +17,11 @@ import cl.duoc.msVehiculo.dto.VehiculoDTO;
 import cl.duoc.msVehiculo.model.Vehiculo;
 import cl.duoc.msVehiculo.service.VehiculoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/vehiculos")
+@Tag(name = "Vehiculo", description = "Controlador para la gestion de vehiculos")
 public class VehiculoController {
 
     @Autowired
