@@ -21,28 +21,38 @@ public class Modelo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description="ID unico con el cual se identifica el tipo de vehiculo")
     private Integer id;
 
     @Column(nullable = false)
+    @Schema(desdcription="nombre o modelo del vehiculo")
     private String nombre;
 
     @Column(nullable = false)
+    @Schema(description="año de fabricacion del vehiculo")
     private Integer anio;
 
     @Column(nullable = false)
+    @Schema(description="Cantidad de puertas con las que cuenta el vehiculo")
     private Integer puertas;
 
     @Column(nullable = false)
+    @Schema(description="cantidad de pasajeros en el cual pueden ir los clientes")
     private Integer pasajeros;
 
     @Column(nullable = false)
+    @Schema(description="tipo de transmision del vehiculo",
+            examples={"mecanico, automatico"})
     private String transmision;
 
     @Column(nullable = false)
+    @Schema(description="Tipo de combustible que utiliza el vehiculo a arrendar",
+            examples={"diesel, bencina, electrico"})
     private String combustible;
 
     @ManyToOne
     @JoinColumn(name = "marca_id", nullable = false)
+    @Schema(derscription="Marca del vehiculo a arrendar")
     private Marca marca;
 
 }

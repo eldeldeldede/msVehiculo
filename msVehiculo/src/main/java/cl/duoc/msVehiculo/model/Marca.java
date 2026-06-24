@@ -19,11 +19,14 @@ public class Marca {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description="ID unico con el cual se identifica la marca del vehiculo")
     private Integer id;
 
     @Column(nullable = false)
+    @Schema(description="nombre con el cual se uidentifica el auto")
     private String nombre;
 
     @Column(nullable = false)
+    @Schema(description="pais de origen del vehiculo")
     private String pais;
 }
