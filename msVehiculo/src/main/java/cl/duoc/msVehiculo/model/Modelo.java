@@ -1,5 +1,6 @@
 package cl.duoc.msVehiculo.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Modelo {
     private Integer id;
 
     @Column(nullable = false)
-    @Schema(desdcription="nombre o modelo del vehiculo")
+    @Schema(description="nombre o modelo del vehiculo")
     private String nombre;
 
     @Column(nullable = false)
@@ -52,7 +53,7 @@ public class Modelo {
 
     @ManyToOne
     @JoinColumn(name = "marca_id", nullable = false)
-    @Schema(derscription="Marca del vehiculo a arrendar")
+    @Schema(description="Marca del vehiculo a arrendar")
     private Marca marca;
 
 }
