@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "modelo")
+@Schema(description = "Entidad que representa un modelo de vehículo")
 public class Modelo {
 
     @Id
