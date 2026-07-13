@@ -32,6 +32,10 @@ public class Vehiculo {
     @Schema(description = "Patente del vehiculo", example = "ABC123")
     private String patente;
 
+    @Column(nullable = false)
+    @Schema(description = "costo de reserva del vehículo por día", example = "5000")
+    private Integer monto_diario;
+
     @ManyToOne
     @JoinColumn(name = "modelo_id")
     @Schema(description = "Modelo del vehiculo")

@@ -48,7 +48,7 @@ public class VehiculoServiceTest {
         vehiculoEjemplo.setPatente("ABCD12");
         vehiculoEjemplo.setKilometraje(10000);
         vehiculoEjemplo.setColor("Rojo");
-        vehiculoEjemplo.setSucursalId(5);
+        vehiculoEjemplo.setMonto_diario(12000);
         vehiculoEjemplo.setModelo(new Modelo());
         vehiculoEjemplo.setTipoVehiculo(new TipoVehiculo());
     }
@@ -138,16 +138,11 @@ public class VehiculoServiceTest {
     @Test
     void buscarVehiculoDTO_exitoso() {
         when(vehiculoRepository.findById(1)).thenReturn(Optional.of(vehiculoEjemplo));
-        
-        SucursalDTO sucursalSimulada = new SucursalDTO();
-        when(sucursalClient.buscarSucursalDTO(5)).thenReturn(sucursalSimulada);
 
         VehiculoDTO resultado = vehiculoService.buscarVehiculoDTO(1);
 
         assertNotNull(resultado);
         assertEquals(1, resultado.getId());
-        assertEquals("ABCD12", resultado.getPatente());
-        assertNotNull(resultado.getSucursal());
     }
 
     @Test

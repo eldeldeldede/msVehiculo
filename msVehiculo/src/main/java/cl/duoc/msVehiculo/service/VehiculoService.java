@@ -47,11 +47,7 @@ public class VehiculoService {
     public VehiculoDTO buscarVehiculoDTO(Integer id){
         Vehiculo vehiculo = buscarVehiculo(id);
 
-        SucursalDTO sucursal = clientSucursal.buscarSucursalDTO(vehiculo.getSucursalId());
-
-        return new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getModelo(), vehiculo.getKilometraje(), sucursal);
-        
-        
+        return new VehiculoDTO(vehiculo.getId(), vehiculo.getPatente(), vehiculo.getMonto_diario());
     }
 
     public Vehiculo actualizarVehiculo(Integer id, Vehiculo vehiculoActualizado){

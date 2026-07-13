@@ -50,9 +50,9 @@ public class DataLoader {
                                             tipoRepo.save(tipo2);
                                             tipoRepo.save(tipo3);
 
-                                            Vehiculo vehiculo1 = new Vehiculo(null, "AA-0000", modelo1, 0, "Negro", 1, tipo2);
-                                            Vehiculo vehiculo2 = new Vehiculo(null, "BB-0000", modelo2, 0, "Negro", 2, tipo1);
-                                            Vehiculo vehiculo3 = new Vehiculo(null, "CC-0000", modelo3, 0, "Negro", 3, tipo1);
+                                            Vehiculo vehiculo1 = new Vehiculo(null, "AA-0000", 20000, modelo1, 0, "Negro", 1, tipo2);
+                                            Vehiculo vehiculo2 = new Vehiculo(null, "BB-0000", 25000, modelo2, 0, "Negro", 2, tipo1);
+                                            Vehiculo vehiculo3 = new Vehiculo(null, "CC-0000", 30000, modelo3, 0, "Negro", 3, tipo1);
 
                                             vehiculoRepo.save(vehiculo1);
                                             vehiculoRepo.save(vehiculo2);

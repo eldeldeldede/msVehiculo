@@ -126,7 +126,7 @@ public class VehiculoControllerTest {
 
     @Test
     void buscarDTO_encontrado_retornaOk() throws Exception {
-        VehiculoDTO dto = new VehiculoDTO(1, "ABCD12", null, 12000, null);
+        VehiculoDTO dto = new VehiculoDTO(1, "ABCD12", 12000);
         when(vehiculoService.buscarVehiculoDTO(1)).thenReturn(dto);
 
         mockMvc.perform(get("/api/v1/vehiculos/dto/1"))

@@ -12,7 +12,5 @@ public class VehiculoDTO {
 
     private Integer id;
     private String patente;
-    private Modelo modelo;
-    private Integer kilometraje;
-    private SucursalDTO sucursal;
+    private Integer monto_diario;
 }
